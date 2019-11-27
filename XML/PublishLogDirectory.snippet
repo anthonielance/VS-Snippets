@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>Publish Log Directory</Title>
+            <Description>Publish "Logs" directory</Description>
+            <Shortcut>plog</Shortcut>
+        </Header>
+        <Snippet>
+            <Code Language="XML">
+                <![CDATA[
+                    <Target Name="CreateLogsFolder" AfterTargets="Publish">
+                        <MakeDir Directories="$(PublishDir)Logs" Condition="!Exists('$(PublishDir)Logs')" />
+                    </Target>
+                ]]>
+            </Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>
